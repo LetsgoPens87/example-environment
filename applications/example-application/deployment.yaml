@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: 235494800395.dkr.ecr.us-east-1.amazonaws.com/example-application:latest
+          image: docker.io/dhricko9/example-application:v7.0.0
           ports:
             - containerPort: 80
 apiVersion: v1
