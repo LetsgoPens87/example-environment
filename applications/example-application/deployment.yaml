@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: example-application
+  annotations:
+    auto-update/image-updater/enabled: "true"
+    auto-update/image-updater/strategy: "semver"  # or "latest"
 spec:
   replicas: 1
   selector:
