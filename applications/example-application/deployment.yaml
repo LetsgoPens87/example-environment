@@ -1,26 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-application
-  annotations:
-    auto-update/image-updater/enabled: "true"
-    auto-update/image-updater/strategy: "semver"  # or "latest"
+  name: my-app
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: example-application
+      app: my-app
   template:
     metadata:
       labels:
-        app: example-application
+        app: my-app
     spec:
       containers:
-      - name: example-application
-        image: docker.io/dhricko9/example-application:v6.0.0
-        ports:
-        - containerPort: 8080
----
+        - name: my-app
+          image: 235494800395.dkr.ecr.us-east-1.amazonaws.com/example-application:latest
+          ports:
+            - containerPort: 80
 apiVersion: v1
 kind: Service
 metadata:
